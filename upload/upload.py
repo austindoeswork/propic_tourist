@@ -4,6 +4,7 @@ import time
 
 photoDir = "/home/adw/propic_tourist/images/"
 
+print("logging into github...")
 ghUser = input("Username: ")
 ghPw = getpass.getpass()
 
@@ -15,15 +16,15 @@ driver.set_window_size(1120, 550) # necessary?
 driver.get("https://github.com/login")
 time.sleep(1)
 field = driver.find_element_by_css_selector('#login_field')
-field .send_keys(ghUser)
+field.send_keys(ghUser)
 field = driver.find_element_by_css_selector('#password')
-field .send_keys(ghPw)
+field.send_keys(ghPw)
 time.sleep(1)
 driver.find_element_by_css_selector('[value="Sign in"]').click()
 time.sleep(1)
 driver.get("https://github.com/settings/profile")
 fileinput = driver.find_element_by_css_selector('#upload-profile-picture')
-pdir = photoDir + "asdf.png" 
+pdir = photoDir + "me.png" 
 fileinput.send_keys(pdir);
 time.sleep(1)
 driver.find_element_by_css_selector('[name="op"]').click()
